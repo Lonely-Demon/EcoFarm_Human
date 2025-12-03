@@ -35,5 +35,3 @@ def test_weather_cache_and_fallback(mock_get, sample_weather_json):
     resp2 = client.get('/weather?lat=12.9&lon=80.2')
     assert resp2.status_code == 200
     assert resp2.json().get('provider') == 'open-meteo'
-
-*** End Patch

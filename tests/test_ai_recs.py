@@ -26,4 +26,3 @@ def test_recommendations(mock_soil, mock_weather, sample_soil, sample_weather):
     assert isinstance(data['recommendations'], list)
     # Top recommendation should be tomato due to preference and matching pH
     assert data['recommendations'][0]['crop'] == 'tomato'
-*** End Patch
