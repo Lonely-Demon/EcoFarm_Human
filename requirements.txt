@@ -8,6 +8,6 @@ alembic==1.11.1
 httpx==0.24.1
 python-dotenv==1.0.0
 supabase==0.7.5
+requests==2.31.0
 pytest==7.3.1
 pytest-asyncio==0.21.0
-sentry-sdk==1.29.0
