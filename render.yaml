@@ -1,0 +1,39 @@
+# Render service definitions (example)
+# You can use this file to define services declaratively in Render.
+# Check Render docs for full syntax & fields; this is a minimal example.
+
+services:
+  - name: ecofarm-auth
+    type: web
+    env: python
+    branch: main
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn services.auth.main:app --host 0.0.0.0 --port $PORT"
+    repo: "<your-github-repo>"
+    plan: free
+
+  - name: ecofarm-farms
+    type: web
+    env: python
+    branch: main
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn services.farms.main:app --host 0.0.0.0 --port $PORT"
+    repo: "<your-github-repo>"
+    plan: free
+
+  - name: ecofarm-weather
+    type: web
+    env: python
+    branch: main
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn services.weather.main:app --host 0.0.0.0 --port $PORT"
+    repo: "<your-github-repo>"
+    plan: free
+  - name: ecofarm-ai-recs
+    type: web
+    env: python
+    branch: main
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn services.ai_recs.main:app --host 0.0.0.0 --port $PORT"
+    repo: "<your-github-repo>"
+    plan: free

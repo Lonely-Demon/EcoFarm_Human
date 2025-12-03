@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "ecofarm_human"
+version = "0.1.0"
+description = "EcoFarm_Human backend (FastAPI services)"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.101"
+uvicorn = "^0.23.2"
+sqlalchemy = "^2.0"
+psycopg2-binary = "^2.9"
+geoalchemy2 = "^0.12"
+alembic = "^1.11"
+httpx = "^0.24"
+python-dotenv = "^1.0"
+supabase = "^0.7.5"
+pytest = "^7.4"
+pytest-asyncio = "^0.21.0"
+
+[tool.poetry.dev-dependencies]
+black = "^24.3"
+flake8 = "^7.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,47 @@
+name: CI & Deploy - Auth Service to Render (staging)
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run unit tests
+        run: |
+          pytest -q
+      - name: Set Sentry Release in Render Config Vars
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+          RENDER_SERVICE_ID_AUTH_STAGING: ${{ secrets.RENDER_SERVICE_ID_AUTH_STAGING }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: |
+          echo "Setting SENTRY_RELEASE=$GITHUB_SHA in Render config vars..."
+          curl -X PATCH \
+            -H "Accept: application/json" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $RENDER_API_KEY" \
+            -d "{\"envVars\": [{\"key\": \"SENTRY_RELEASE\", \"value\": \"$GITHUB_SHA\"}]}" \
+            https://api.render.com/v1/services/$RENDER_SERVICE_ID_AUTH_STAGING/env-vars
+
+      - name: Deploy to Render (Trigger staging)
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+          RENDER_SERVICE_ID_AUTH_STAGING: ${{ secrets.RENDER_SERVICE_ID_AUTH_STAGING }}
+        run: |
+          echo "Triggering Render staging deploy for auth service..."
+          curl -X POST \
+            -H "Accept: application/json" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $RENDER_API_KEY" \
+            https://api.render.com/v1/services/$RENDER_SERVICE_ID_AUTH_STAGING/deploys

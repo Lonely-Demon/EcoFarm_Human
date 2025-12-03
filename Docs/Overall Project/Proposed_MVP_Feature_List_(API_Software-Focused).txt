@@ -1,0 +1,109 @@
+Proposed MVP Feature List (API/Software- Focused)
+This list outlines a proposed Minimum Viable Product (MVP) scope for the Smart Farming Ecosystem mobile app, focusing on features deliverable primarily through APIs and core app functionality, without reliance on unavailable hardware (sensors, controllers, drones) or critical/inaccurate manual data input (like detailed soil composition). The goal is to provide immediate, daily value to farmers in a standalone app.
+
+Core MVP Features:
+
+1. Accurate Weather Data: (Based on Feature #1 & #30)
+
+• Provide current weather conditions and forecasts using reliable weather APIs based on the farm's location (manually entered or GPS).
+
+• Value: Essential daily information for planning farm activities.
+2. Farm Mapping & Zoning (Manual): (Based on Feature #2)
+
+• Allow users to manually draw or de?ne their farm boundaries on a map interface.
+• Allow users to manually divide the farm into di?erent zones/sectors and label them (e.g., by crop type).
+
+• Value: Foundational for organizing farm information, even if basic initially.
+3. Satellite View: (Based on Feature #9)
+
+• Integrate satellite imagery for the mapped farm area.
+• Value: Provides visual context for the farm layout.
+4. Real-Time Market Price Tracking: (Based on Feature #26)
+
+• Fetch and display current market prices for selected crops from relevant regional markets (using ?nancial/agricultural market data APIs).
+
+• Allow users to select crops and locations of interest.
+• Value: High daily value for making selling decisions and negotiation.
+5. AI Planting Recommendations (Regional Data): (Based on Feature #11)
+
+• Suggest suitable crops based on farm location (GPS/manual), publicly available regional soil type data (if accessible via API), weather forecasts, market demand/prices, and user preferences (budget, etc.).
+
+• Note: Accuracy depends on the quality of public soil data for the region. App must clarify this limitation.
+
+• Value: Provides actionable, location-aware planting guidance, increasing MVP utility.
+6. Crop Lifecycle Guidance (General): (Based on Feature #5 & #13)
+
+• Provide general, non-soil-speci?c information and best practices for various crops covering pre-planting, planting, cultivation, and harvesting.
+
+• This would be based on general agricultural knowledge, not real-time farm data.
+• Value: Useful reference guide for farmers.
+7. Task Management: (Based on Feature #13)
+
+• Allow farmers to manually create, view, and manage tasks related to their farm activities.
+
+• Value: Basic organizational tool.
+8. Automated Record-Keeping (Manual Entry Focus): (Based on Feature #7)
+
+• Allow farmers to manually log key activities like planting dates, crop types per zone, harvest dates, expenses, sales, etc.
+
+• Value: Creates a basic digital farm diary, useful for tracking and future planning.
+9. Inventory Management (Manual): (Based on Feature #8)
+
+• Allow farmers to manually track inventory levels of inputs like seeds, fertilizers (types, not precise soil needs), etc.
+
+• Value: Helps manage supplies.
+10. Financial Management Tools (Basic): (Based on Feature #31 & #10)
+
+• Simple tools for manual budget planning and tracking farm-related income and expenses.
+
+• Value: Helps with ?nancial overview.
+11. Customizable Crop Calendars (General): (Based on Feature #32)
+
+• Provide general crop calendars that users can potentially customize with their own planting dates and notes.
+
+• Value: Helps plan seasonal activities.
+12. Smart Noti?cations (Basic): (Based on Feature #33)
+
+• Noti?cations for signi?cant weather alerts (from API), market price thresholds (user- set), task reminders (user-set).
+
+• Value: Keeps users informed about critical external changes and their own planned tasks.
+
+13. Multi-Language Support: (Based on Feature #34)
+
+• Ensure the app supports relevant languages.
+• Value: Accessibility.
+14. User-Friendly Interface: (Based on Feature #35)
+
+• Focus on an intuitive design, potentially with o?ine access for some static information (like crop guides).
+
+• Value: Usability.
+
+Potential MVP AI Features (Less Sensor Dependent):
+
+1. Crop Disease Diagnosis (User Photo Upload): (Based on Feature #14)
+
+• Allow users to upload photos of potentially diseased plants.
+• Use an AI image recognition model (trained on general plant disease datasets) to suggest possible diseases and general treatment options.
+
+• Value: Potentially high value, but accuracy depends heavily on photo quality and model robustness without farm-speci?c context.
+
+2. Pest Management Alerts (Regional/Seasonal): (Based on Feature #15)
+
+• Provide alerts based on known seasonal pest cycles for the user's region and selected crops, or potentially based on publicly available pest advisories.
+
+• O?er general pest control advice.
+• Value: Proactive information, less precise than sensor-based detection.
+
+Features Explicitly Excluded from MVP (See Considerations Document):
+• Sensor Integration & Monitoring (#2, #3)
+• Remote Equipment Control (#6)
+• AI Crop Growth Optimization (Soil/Sensor-Speci?c) (#12)
+• Automated Irrigation Scheduling (#16)
+• Yield Prediction (Sensor-Reliant) (#17)
+• Sustainability Metrics (Sensor-Reliant) (#18)
+• Soil Health History (#19)
+• Energy Consumption Tracking (#9)
+• Equipment Maintenance Alerts (#10)
+• Drone Integration (#36)
+
+• Community & Advanced Marketplace Features (#11, #12, #15, #17, #18, #20, #21, #22, #23, #24, #25, #27, #28, #29) - Can be considered for Phase 2.
